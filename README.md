@@ -26,7 +26,7 @@ Interception is that part of precipitation that is captured by vegetation and is
 
 ## [CanWat Requirements](#toc) <a name="CanWat Requirements"></a>
 
-CanWat can be downloaded from the Git repository as a packed file. Go to <https://github.com/Ron-Q/CanWat.git>, on the top left side you will find a button with a download symbol. The package contains the preferable folder structure and the source code. Please unpack the files in any folder and remember it, as it is the CanWat home folder. 
+CanWat can be downloaded from the Git repository as a packed file. Go to <https://github.com/Ron-Q/CanWat.git>. Click "<> Code" Button at the top and "Download ZIP". The package contains the preferable folder structure and the source code. Please unpack the files in any folder and remember it, as it is the CanWat home folder. 
 It comprises the following parts:
  - "Case" - folder: <img src="./Docs/Figures/Rlogo_s.png"/>-skripts that describe the input and output 
  - "Docs" - folder: Documentation 
