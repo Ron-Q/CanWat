@@ -1,0 +1,14 @@
+the trees are "created" with
+d:\0_ownCloud_robq\0_R_lib\s_Vegetation\Baum.R
+
+It is a voxel interpretation of the Plant Area Density (PAD) and has a resolution in x,y,z  of 1m, 1m, 1m, and the dimensions dim=c(x,y,z)
+
+- Case01_tree_1D: x =   1, y =   1, z = 10
+- Case01_tree:        x = 10, y = 10, z = 10
+- Case02_tree_1D: x =   1, y =   1, z = 20
+- Case02_tree:        x = 20, y = 20, z = 20
+
+It is stored as one dimensional vektor with highest frequency in z, then y and x.
+Thus z is the most inner loop and x is the outer loop.
+
+
