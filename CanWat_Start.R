@@ -5,13 +5,11 @@
 #   gross rainfall, temperature, humidity, wind and a vegetation model
 # RELEVANCY*: Water balance of forests
 # PACKAGES:
-  # install.packages("data.table")
-  # install.packages("png")
-  # install.packages("rasterImage")
-  # install.packages("colorRamps")
-  # install.packages("zeallot")
+  # install.packages("pacman")
+  pacman::p_load(data.table, png, rasterImage, colorRamps)
 # REFERENCE:
-#   Queck  (2023) paper in preparation
+  #   Queck (2025) "CanWat - A Tool for Investigating Rainfall Interception with high spatial Resolution" paper in preparation", Poster at DACH 2025.
+  #   Queck (2025) "Rainfall interception - Localization of water storage and evapo(transpi)ration in forests with CanWat" paper in preparation
 #-
 # INPUT BEGIN #######################################################
 
@@ -43,39 +41,17 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 #* name a case/incident ####
-  act <- "Case00_homogen_2D_01L"
-  # act <- "Case01_Tree01_1D_01L"
+  # act <- "Case01_Tree01_1D_01L"  # example for a Big Leaf simulation
   # act <- "Case01_Tree01_1D_02L"
   # act <- "Case01_Tree01_1D_03L"
   # act <- "Case01_Tree01_1D_04L"
   # act <- "Case01_Tree01_1D_05L"
   # act <- "Case01_Tree01_1D_10L"
   # act <- "Case01_Tree01_2D_10L"
-  # act <- "Case01_Tree01_3D_10L"
+  # act <- "Case01_Tree01_3D_10L"  # example for a simulation on a grid of 1 m³
   # act <- "Case02_Tree01_1D_20L"
   # act <- "Case02_Tree01_3D_20L"
   
-  # act <- "ASTW_intChute_2010_0D"
-  # act <- "ASTW_intChute_2010_3D"
-  # act <- "ASTW0_exmpl_07" 
-  # act <- "StudyProject2023"
-  # act <- "ASTW_intChute_2008-2010_0D"
-  
-  # act <- "ASTW_PAD2011-gutter-3D_2008-2010"    
-  # act <- "ASTW_PAD2011-3D_2008-2010"           # 2025-01-22 tests no runs RQ
-  # act <- "ASTW_PAD2011-2D_2008-2010"           # 2025-01-23 .. 02-13 RQ
-  # act <- "ASTW_PAD2011-0Dgut_2008-2010"        # 2025-02-13 RQ
-  
-  # act <- "ASTW_mean_2010_0D"                   # 2025-01-17 RQ
-  # act <- "ASTW_PAD2010_0D_dry"                 # 2025-01-28 RQ
-  # act <- "ASTW_PAD2010_0D_2008-10AprSepDry"    # 2025-02-07 RQ   
-  # act <- "ASTW_PAD2010_0D_2008-10AprSep"       # 2025-02-10 RQ
-  
-  #act <- "ASTW_PAD2010_0Dgut_2008-2010"        # 2025-02-26 RQ
-  # act <- "ASTW_PAD2010_2Dguth_2008-2010"        # 2025-02-26 RQ
-  # act <- "ASTW_PAD2010_2Dgut_2008-2010"        # 2025-02-26 RQ
-  # act <- "ASTW_PAD2010_0D_2008-2010"           # 2025-02-25 RQ 
-  # act <- "ASTW_PAD2010_2D_2008-2010"           # 2025-02-25   
   
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #* Paths and subroutines #### 
@@ -104,11 +80,10 @@
   path_output <- file.path(path.CW , "Output")
   path_sub <- file.path(path.CW , "Sub")
 
+  
 # INPUT END #########################################################  
-  
-  # ito.stop <- 235
-  
-# RUN PROGRAM #######################################################
+
+  # RUN PROGRAM #######################################################
   CanWatStart <- T
   source(file.path(path_sub,"CanWat.R"))
   

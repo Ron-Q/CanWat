@@ -12,6 +12,14 @@
 print("     -> read input file")
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# PARAMETERS ########################################################
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  treetype <- "picea_abies"
+  CWpara_name <- paste0("CW_parameter-",treetype, "_ASTW2008-2010.R")
+  hveg <- 10 # in m, average vegetation height 
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # STATIC DRIVER ####################################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #* name and range ####
@@ -37,11 +45,7 @@ print("     -> read input file")
   # correction/clumping factor for PAD  (called in Load_Static_Driver.R )
   PADfunction <- function(PAD){ PAD + 0 }
   
-  # PARAMETER : tree type ####
-  treetype <- 'picea_abies'
-  CWpara_name <- paste0('CW_parameter-',treetype, '.R')  # name of the parameter file
-  
-  
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # DYNAMIC DRIVER - Meteorolocial Data ################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

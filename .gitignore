@@ -10,8 +10,11 @@ Tests
 .Ruserdata
 CanWat.Rproj
 CanWat_Start_test.R
+CanWat_Start_multi.R
 Cases/*
 !Cases/Case*
+!Cases/ASTW_intChute_2010_3D_input.R
+!Cases/Output_yz-cross-section.R
 Driver_static/*
 !Driver_static/Tree*
 !Driver_static/ASTW_PAD_3D.csv
@@ -19,3 +22,4 @@ Driver_static/*
 Driver_dynamic/*
 !Driver_dynamic/exmpl*
 !Driver_dynamic/Case*
+Driver_parameter/*

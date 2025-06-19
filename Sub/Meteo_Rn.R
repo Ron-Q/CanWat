@@ -46,13 +46,12 @@ Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tetop, DDtop, PAD, P
   # Rntop: radiation that is captured by the stand
   # But WHERE?
   
-  if (T){
+  if (bigleaf){
 
-    
-    
+        
     #* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     #* Strahlungsverteilung muss überprüft werden
-    #* Aktuell nur Rechnungen mit 1 Layer machen
+    #* Aktuell besser nur Rechnungen mit 1 Layer machen
     #* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
     # APPROACH 0) -----------------------------------------------------

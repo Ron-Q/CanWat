@@ -60,8 +60,8 @@ fnam.sd <- substr(fnam.SD,1, nchar(fnam.SD)-4)
   
   if (!exists("treetype")) treetype <- "picea_abies"
   if (is.na(treetype)) treetype <- "picea_abies"
-  if (!exists("CWpara_name")) CWpara_name <- paste0("CW_parameter-",treetype, ".R")   
-  if (is.na("CWpara_name")) CWpara_name <- paste0("CW_parameter-",treetype, ".R")   
+  if (!exists("CWpara_name")) CWpara_name <- paste0('CW_parameter-',treetype, '_ASTW2008-2010.R')   
+  if (is.na("CWpara_name")) CWpara_name <- paste0('CW_parameter-',treetype, '_ASTW2008-2010.R')   
   
   
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,8 +75,10 @@ fnam.sd <- substr(fnam.SD,1, nchar(fnam.SD)-4)
   if (!exists("Event.ext.b")) Event.ext.b <- 0      
   if (!exists("Event.ext.a")) Event.ext.a <- 0      
   if (!exists("Event.ext.round")) Event.ext.round <- dt_met                # in s, full time interval (3600s rounds the start and end time to the full hour) )
+  if (!exists("bigleaf")) bigleaf <- F
+    
   if (Event.ext.round < dt_met) Event.ext.round <- dt_met
-
+  
 #* Times and Intervals ####
 
   dt0 <- dt_met  # time step of input data

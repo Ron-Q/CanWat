@@ -1,4 +1,4 @@
-﻿#+
+#+
 # NAME*:        Tree01_3D_20L_input.R
 # PURPOSE*:     CanWat input parameters for a test case:  
 # RELEVANCY*:   CanWat
@@ -10,6 +10,14 @@
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 print("     -> read input file")
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# PARAMETERS ########################################################
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  treetype <- "picea_abies"
+  CWpara_name <- paste0("CW_parameter-",treetype, "_ASTW2008-2010.R")
+  hveg <- 10 # in m, average vegetation height 
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # STATIC DRIVER ####################################################
@@ -30,7 +38,6 @@ print("     -> read input file")
   #* region  of interest ####
   # borders of the domain with respect to the reference point
   # distance to the reference point in "m", 
-  # the interception chute in x185:191 und y15:35
   x1.ref <-  0;  x2.ref <-  20  # east of the reference point
   y1.ref <-  0;  y2.ref <-  20  # north of the reference point
   z1.ref <-  0;  z2.ref <-  20     
@@ -38,10 +45,7 @@ print("     -> read input file")
   # correction/clumping factor for PAD  (called in Load_Static_Driver.R )
   PADfunction <- function(PAD){ PAD + 0 }
 
-  #* tree type ####
-  treetype <- "picea_abies"
-  CWpara_name <- paste0("CW_parameter-",treetype, ".R")   
-  
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # DYNAMIC DRIVER - Meteorolocial Data ################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
