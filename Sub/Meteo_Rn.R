@@ -20,9 +20,10 @@
   # 01/2021 (RQ): created 
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tetop, DDtop, PAD, PADc, pRtrans, dz, nz, Rn_3D, padat){
-# check input   
-               # Tetop=Tatop
+
+Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tatop, DDtop, PAD, PADc, pRtrans, dz, nz, Rn_3D, padat){
+# check input 
+               Rnheights <- hRn/100 
                # cat(Rndat,   hRn/100       , Rgtop       , Tatop, DDtop                    , dz, nz)
                # round(range(Rg_3D)); round(range(Ts_3D))
                # round(range(pRtrans)); round(range(Rn_3D))
@@ -106,14 +107,14 @@ Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tetop, DDtop, PAD, P
 
     # Incoming Radiation longwave (from the Sky) ####
     # as a function of temperature, vapour pressure and cloud cover 
-    Tair <- Tetop+273.15 # K, temperature near the ground
+    Tair <- Tatop+273.15 # K, temperature near the ground
     # DDtop
     # ~~~~ Emissivity - cloudless sky ~~~~
     # Rl.skyest <- -119 + 1.06 * 5.6698e-8 * Tair^4 # estimate for cloudless sky
     # MU08,p76
     a <- 0.1; c <- 0.3 # m^2/kg
     b <- 1.2 
-    w <- 4.65*(DDtop*100)/(Tetop+273.15)    # in kg/m^2, precipitable water content of the atmosphere
+    w <- 4.65*(DDtop*100)/(Tatop+273.15)    # in kg/m^2, precipitable water content of the atmosphere
     epsi.a <- 1 - (1+a*w)*exp(-sqrt(b+c*w)) # - , emissivity of air 
     # ~~~~ Shortwave Radiation of a Clear Sky  ~~~~ 
     # Rg0 <- Rgext(UTC, psi) 
@@ -171,16 +172,30 @@ Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tetop, DDtop, PAD, P
     Rn_3D <- Rl.net+Rs.net
     
     # BALANCE over all layer and mean over the columns ####
-    # summary(Rn_3D)
-    (Rnet3D <- sum(Rn_3D)/area_xy)
-    if (silent < 1) print(paste("Radiation",round(Rntop), round(Rnet3D)))
-    # there is still a small deviation, to correct later
-
+    (Rnet3D <- sum(Rn_3D)/area_xy); Rntop
+    # there is still a small deviation between Rn_top and , to adjust later
+    Rn_3D <- Rn_3D*Rntop/Rnet3D
+    
   }
   
-  # ==> Check the balance with measurements
+  if (silent < 1) print(paste("Rntop: ",round(Rntop),"; Rn_3D:", round(sum(Rn_3D)/area_xy)))
   
-
   return(Rn_3D)
 }
 
+
+
+
+if(F){
+  # ==> Check the balance with measurements
+  (Rnet3D <- sum(Rn_3D)/area_xy)
+  
+  if (silent < 1) print(paste("Radiation",round(Rntop), round(Rnet3D)))
+  
+  dim.Rn <- dim(Rn_3D)
+  plot(Rn_3D[,1,1], zz)
+  for (i in 1:dim.Rn[1]){
+    lines(Rn_3D[,1,i], zz, col=i)
+  }
+  
+}

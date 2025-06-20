@@ -51,6 +51,8 @@
   # act <- "Case01_Tree01_3D_10L"  # example for a simulation on a grid of 1 m³
   # act <- "Case02_Tree01_1D_20L"
   # act <- "Case02_Tree01_3D_20L"
+   act <- "Case00_homogen_2D_01L"
+  # act <- "ASTW_intChute_2010_3D"   # ICOS site DE-THA, Trees around the interception chute near the measurement tower
   
   
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,14 +63,11 @@
   # An easy and save way to get the home path of CanWat is to navigate to the folder in your file commander/explorer and copy the path.
   # In windows you may run the command "gsub("\\\\", "/", (readClipboard()))" to change back slashs to slashs
   switch(Sys.info()["nodename"]
-         , "MICROPC16"         = {path.CW <- "d:/b_Programming/0_R_lib/y_CanWat"}  # Ronald windows machine
-         , "rq-ThinkPad-T460p" = {path.CW <- "/media/rq/Projects/b_Programming/0_R_lib/y_CanWat"}  # Ronald linux machine
-         , "DESKTOP-2633AIU"   = {path.CW <- "C:/Users/HP/Desktop/Gitare/HSE Notes/Internship/Dr Queck/Doku/canwat-main"}  # Gitare 
-         , "Hotzenplotz"       = {path.CW <- "..."}  # Uta
-         , "FMEPC178"          = {path.CW <- "d:/b_Programming/0_R_lib/y_CanWat"}  # IHM met windows machine
-         , "FMELAP78"          = {path.CW <- "d:/b_Programming/0_R_lib/y_CanWat"}       # IHM met laptop
-         , "meinRechner"   = {path.CW <- "c:/Projects/b_Programming/0_R_lib/y_CanWat"}
-         , "COLDAIRSIMULATI"   = {path.CW <- "c:/Projects/b_Programming/0_R_lib/y_CanWat"}    # TUD virtual machine
+         , "MICROPC16"         = {path.CW <- "d:/b_Programming/Git/CanWat"}             # Ronald windows machine
+         , "rq-ThinkPad-T460p" = {path.CW <- "/media/rq/Projects/b_Programming/Git/CanWat"}  # Ronald linux machine
+         , "FMEPC178"          = {path.CW <- "d:/b_Programming/Git/CanWat"}             # IHM met windows machine
+         , "FMELAP78"          = {path.CW <- "d:/b_Programming/Git/CanWat"}             # IHM met laptop
+         , "COLDAIRSIMULATI"   = {path.CW <- "c:/Projects/b_Programming/Git/CanWat"}    # TUD virtual machine
   )
 
   ##~~ Possible customization for individualists ####

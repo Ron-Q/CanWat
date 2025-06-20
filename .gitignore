@@ -17,9 +17,10 @@ Cases/*
 !Cases/Output_yz-cross-section.R
 Driver_static/*
 !Driver_static/Tree*
-!Driver_static/ASTW_PAD_3D.csv
-!Driver_static/ASTW_PAD_3D_description.txt
+!Driver_static/ASTW_PAD_3D_2019_int.csv
 Driver_dynamic/*
 !Driver_dynamic/exmpl*
 !Driver_dynamic/Case*
+!Driver_dynamic/ASTW_CW_dynamic_driver_2010.csv
 Driver_parameter/*
+!Driver_parameter/CW_parameter-picea_abies_ASTW2008-2010.R

@@ -12,6 +12,14 @@
 print("     -> read input file")
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# PARAMETERS ########################################################
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  treetype <- "picea_abies"
+  CWpara_name <- paste0('CW_parameter-',treetype, '_ASTW2008-2010.R')  # name of the parameter file
+  hveg <- 33 # in m, average vegetation height 
+
+  
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # STATIC DRIVER ####################################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #* name and range ####
@@ -39,12 +47,6 @@ print("     -> read input file")
   # correction/clumping factor for PAD  (called in Load_Static_Driver.R )
   PADfunction <- function(PAD){ PAD + 0 }
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# PARAMETER : tree type #############################################
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  treetype <- "picea_abies"
-  CWpara_name <- paste0("CW_parameter-",treetype, ".R")   
-  
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # DYNAMIC DRIVER - Meteorolocial Data ################################
@@ -56,6 +58,7 @@ print("     -> read input file")
 #* Event Selection ####
   it1 <- 12961;     it2 <- 39312           # index of start time step, selected interval
   it1 <- 14500;     it2 <- 14550         # index of end time step, selected interval, first larger event
+  # it1 <- 14450;     it2 <- 14460         
   
 #* Date description ####
   namTime <- "time"                #  , name of the date column
@@ -134,7 +137,7 @@ print("     -> read input file")
 # general output switches ####  
   silent <- 0     # Output control flag: 1: supress print output within the time loop,  2: supress print output completely
   plotMeanTS <- T # plot of the water budget, this might be slow
-  plotlife <- F   # control plot of the water budget after each time step, this might be even slower
+  plotlife <- T   # control plot of the water budget after each time step, this might be even slower
 
 # called each time steps #########    
   #* Standard Output #########    currently not active
