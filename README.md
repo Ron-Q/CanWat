@@ -102,9 +102,15 @@ Figure X present an overview of the model structure. The main processes used in 
 
 # [4 Model parameters](#toc) <a name="Model parameters"></a>
 
+<<<<<<< HEAD
 CanWat requires several parameters to generate a spatial representation of the meteorological variables, but also to simulate drainage and the resistance against evaporation. They are described in the scripts \~/sub/CW_parameter*.R, where the user can also change it.
 
 The following table will describe the parameters for the various approaches used in CanWat. Until then, please take a look at one of the example scripts (\~/sub/CW_parameter-picea_abies_ASTW2008-2010.R).
+=======
+CanWat requires several parameters to generate a spatial representation of the meteorological variables, but also to simulate drainage and the resistance against evaporation. They are described in the script \~/sub/CW_parameter*.R, where the user can also change it.
+
+The following table will describe the parameters for the various approaches used in CanWat. Until then, please take a look at one of the example scripts.
+>>>>>>> 952d091a0775e3fb4d6d035bb9b8528faa07508d
 
 |               | Parameters | Description |
 |---------------|------------|-------------|
