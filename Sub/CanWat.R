@@ -1,7 +1,7 @@
 #+
 # NAME*: CanWat.R
 # PURPOSE*: main routine of 'CanWat'
-#   Numerical model for the calculation of the incanopy water balance based on 
+#   Numerical model for the calculation of the in-canopy water balance based on 
 #   gross rainfall and a vegetation model
 # RELEVANCY*: Water balance of forests
 # CALLED BY: CanWat_Start.R
@@ -11,6 +11,10 @@
 #   Rutter (1971)
 #   Queck  (1997)
 #   Kunath (2015)
+#   Grunicke S, Queck R, Bernhofer C (2019) Long-term investigation of forest canopy rainfall interception for a spruce stand, DOI: 10.1016/j.agrformet.2020.108125
+#   Fischer S, Queck R, Bernhofer C, Mauder M (2025) Quantifying evaporation of intercepted rainfall: a hybrid correction approach for eddy-covariance measurements. EGUsphere:1–33 
+#   Queck (2025) "CanWat - A Tool for Investigating Rainfall Interception with high spatial Resolution" paper in preparation", Poster at DACH 2025.
+#   Queck (2025) "Rainfall interception - Localization of water storage and evapo(transpi)ration in forests with CanWat" paper in preparation
 # REVISION HISTORY*:
 #   the idea was born within the diploma thesis of Queck (1997)
 #   it grew in several student projects under the supervision of Dr. Ronald Queck
@@ -32,10 +36,11 @@
 #   2022-09-29 (RQ): time output in outer time loop was last start time from inner loop => corrected to start time of outer time loop
 #   2023-07-19 (RQ): event Handling integrated.
 #   2023-08-09 (RQ): replaced paste0() with file.path(), corrected and added journal entries, added option to extend events fitting to other time step lengths
-#   2025-01-22 (RQ): radiation handling reviced + diverse small changes and bug fixes
+#   2025-01-22 (RQ): radiation handling revised + diverse small changes and bug fixes
 #   2025-03-15 (RQ): event output as standard
 #   2025-05-15 (RQ): CHECK INPUT after parameter input, as parameter input is also edited by the users 
-CWversion <- 20250515
+#   2025-06-20 (RQ): added parameter ‘bigleaf’ and slightly ‘adjusted’ the radiation model.
+CWversion <- 20250620
 #-
 #-- main program ---------------------------------------------------------------
 

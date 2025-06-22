@@ -1,0 +1,14 @@
+This document grants anyone who obtains a copy of the ‘CanWat’ project's software and associated documentation files free permission to use them under the following conditions:
+
+Attribution (BY):	Licensees may copy, distribute, display, perform and make derivative works and remixes based on it only if they give the author or licensor the credits (attribution) in the manner specified by these.
+
+Reference the Project by the Name of the author and its Github address: Queck (2025) CanWat, https://github.com/Ron-Q/CanWat
+
+Non-commercial (NC): Licensees may copy, distribute, display, perform the work and make derivative works and remixes based on it only for non-commercial purposes. 
+
+Share-alike (SA): Licensees may distribute derivative works only under a license identical to ("not more restrictive than") the license that governs the original work.
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
