@@ -102,9 +102,9 @@ Figure X present an overview of the model structure. The main processes used in 
 
 # [4 Model parameters](#toc) <a name="Model parameters"></a>
 
-CanWat requires several parameters to generate a spatial representation of the meteorological variables, but also to simulate drainage and the resistance against evaporation. They are described in the script \~/sub/CW_parameter.R, where the user can also change it.
+CanWat requires several parameters to generate a spatial representation of the meteorological variables, but also to simulate drainage and the resistance against evaporation. They are described in the script \~/sub/CW_parameter*.R, where the user can also change it.
 
-Table (XX) describes different CanWat parameters for interception prediction:
+The following table will describe the parameters for the various approaches used in CanWat. Until then, please take a look at one of the example scripts.
 
 |               | Parameters | Description |
 |---------------|------------|-------------|
@@ -117,9 +117,7 @@ Table (XX) describes different CanWat parameters for interception prediction:
 | Drainage      |            |             |
 | Model         |            |             |
 
-Wind field, Precipitation,Evaporation, Radiation,Resistance,Plants and Drainage
 
-------------------------------------------------------------------------
 
 # [5 Model input data](#toc) <a name="Model input data"></a>
 
@@ -246,8 +244,4 @@ The following figure was created with the example "ASTW0_output.R"
 
 # [7 CanWat model Theory](#toc) <a name="CanWat model Theory"></a>
 
-## [Single approaches](#toc) <a name="Single approaches"></a>
-
-## [CanWat model assumptions](#toc) <a name="CanWat model assumptions"></a>
-
-Test
+2025-06-22: Please wait a few days; an article describing the individual approaches is currently being prepared: Queck 202(5), "*CanWat: A Modular Approach to High-Resolution Rainfall Interception Modeling in R*"
