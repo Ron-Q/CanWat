@@ -29,6 +29,10 @@ The aim of the presented model CanWat is to reduce the existing uncertainties by
 
 The interception process is modelled on a voxel space of small storages and evaporation by resistance cascades. The model works with spatial resolutions down to 1 m3 and uses variable time steps depending on the filling of the interception storage.
 
+As  an example, the following Figure shows an artificial block rain event (Freilandniederschlag) on a single tree. With increasing time steps (Zeitschritt), the Canopy Storage (Speicherfüllung) is emptied by Drainage and Evaporation (Verdunstung).
+
+<img src="./Docs/Figures/Tree1.gif"/>
+
 
 # [2 Quick Start Tutorial](#toc) <a name="Quick Start Tutorial"></a> 
 

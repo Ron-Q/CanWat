@@ -51,8 +51,8 @@
   # act <- "Case01_Tree01_3D_10L"  # example for a simulation on a grid of 1 m³
   # act <- "Case02_Tree01_1D_20L"
   # act <- "Case02_Tree01_3D_20L"
-   act <- "Case00_homogen_2D_01L"
-  # act <- "ASTW_intChute_2010_3D"   # ICOS site DE-THA, Trees around the interception chute near the measurement tower
+  # act <- "Case00_homogen_2D_01L"
+   act <- "ASTW_intChute_2010_3D"   # ICOS site DE-THA, Trees around the interception chute near the measurement tower
   
   
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
