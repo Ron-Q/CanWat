@@ -21,6 +21,14 @@
 ## [Interception](#toc) <a name="Interception"></a> 
 
 Interception is that part of precipitation that is captured by vegetation and is evaporating back into the atmosphere. The interception process has a significant influence on the availability of water in ecosystems. Up to 50 % of precipitation in forest ecosystems evaporates via interception and is not available to plants.
+However, measurements of the water balance and evaporation are inconsistent and show scatter compared with interception models (Van Dijk et al. 2015, [DOI: 10.1016/j.agrformet.2015.09.006](https://doi.org/10.1016/j.agrformet.2015.09.006)).
+
+The aim of the presented model CanWat is to reduce the existing uncertainties by investigating and parameterising the small-scale variability of the process.
+
+<img src="./Docs/Figures/Interception_scheme.png"/>
+
+The interception process is modelled on a voxel space of small storages and evaporation by resistance cascades. The model works with spatial resolutions down to 1 m3 and uses variable time steps depending on the filling of the interception storage.
+
 
 # [2 Quick Start Tutorial](#toc) <a name="Quick Start Tutorial"></a> 
 
