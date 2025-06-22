@@ -18,7 +18,7 @@
 #       separate arrays for each meteorological variable
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if (silent < 2) print("     -> load Dynamic Driver")
+if (silent < 2) cat("---- load Dynamic Driver \n")
 
   # journal <- c(journal, paste(   "  "))
 
@@ -47,7 +47,7 @@ if (silent < 2) print("     -> load Dynamic Driver")
   if(!exists("it2")) it2 <- ndat
   if (it2 > ndat) {
     it2 <- ndat
-    print(paste0("the end index it2 is bigger than the number of available time steps, the number of time steps is reduced to: it2=", ndat))
+    cat("the end index it2 is bigger than the number of available time steps, the number of time steps is reduced to: it2=", ndat, "\n")
   }  
   if (!is.na(sum(EvNo.selected))){it1 <- 1;  it2 <- ndat}   # take all if event selection is active
   ntu<- it2-it1+1          # adjust the number of the timesteps ntu according to the available data

@@ -24,7 +24,7 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 storage_parameter <- function(S0, Dmin0, bd0, PAI.S0, PAD,dz){
 
-  if (silent < 2) print("- calculate canopy storage parameter")
+  if (silent < 2) cat("---- calculate canopy storage parameter \n")
 
   # S, canopy storage capacity (Benetzungskapazitaet) ####
     # S ~ LAD

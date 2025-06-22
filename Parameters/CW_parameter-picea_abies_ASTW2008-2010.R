@@ -10,7 +10,7 @@
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Definition of Parameters ####
-print("---- CALL: CW_parameter.r ----")
+cat("---- CALL: CW_parameter.r ---- \n")
 
 #* Wind field ####
 # the following parameters adjust the calculation of the initial wind field (see Queck R, Bernhofer C (2010))

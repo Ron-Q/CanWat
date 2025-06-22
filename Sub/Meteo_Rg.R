@@ -63,7 +63,7 @@ Meteo_Rg <- function(Rgdat,  Rgheights, PADc, pRtrans, dz, Rg_3D){
   # dev.set(5); rasterImage2(z=t(tst[,iyreft,]),z.cex=1); abline(v=ixreft)
   # dev.set(6); plot(tst[,iyreft,ixreft],1:33, xlim=c(0,3)); for (i in 1:nx)  for (j in 1:ny) lines(tst[,j,i],1:33); lines(tst[,iyreft,ixreft],1:33, col=2, lwd=3); abline(v=0, col=3)
   
-  if (silent < 1) print(paste("Rgtop: ",round(Rgtop), "; Rg_3D[nz,,]:", round(sum(Rg_3D[nz,,])/area_xy), "; Rg_3D[2,,]:", round(sum(Rg_3D[2,,])/area_xy), "; Rg_3D[1,,]:", round(sum(Rg_3D[1,,])/area_xy)))
+  # if (silent < 1) print(paste("Rgtop: ",round(Rgtop), "; Rg_3D[nz,,]:", round(sum(Rg_3D[nz,,])/area_xy), "; Rg_3D[2,,]:", round(sum(Rg_3D[2,,])/area_xy), "; Rg_3D[1,,]:", round(sum(Rg_3D[1,,])/area_xy)))
   
   return(Rg_3D)
 }

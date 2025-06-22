@@ -54,8 +54,8 @@ CWversion <- 20250620
   if (!CanWatStart) {
     #* CLEAR the WORKSPACE? ####
     # if TRUE, every variable will be deleted !
-    if (TRUE) {remove (list = ls())             ; print("######## Reset #########")}
-    if (FALSE) {for (i in dev.list()) dev.off(i) ; print("## all devices closed ##")}
+    if (TRUE) {remove (list = ls())             ; cat("######## Reset #########\n")}
+    if (FALSE) {for (i in dev.list()) dev.off(i) ; cat("## all devices closed ##\n")}
 
     #* Control Variables ####
     # select a case/incident
@@ -123,13 +123,13 @@ CWversion <- 20250620
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 # ~~~ START ~~~ ##################################################################
-  print(paste(""))
-  print(paste("#############################################"))
-  print(paste("### CanWat ### Canopy Water Balance Model ###"))
-  print(paste("############## Version: ", CWversion, "############"))
-  print(paste("Time stemp: ",Tstamp))
-  print(paste("for details see journal: ", file.path(path_output_act, "CanWat_journal_",Tstamp,".txt  " )))
-  print(paste("started from folder: ",path_Cases, ", Case: ",act))
+  cat("\n")
+  cat("#############################################\n")
+  cat("### CanWat ### Canopy Water Balance Model ###\n")
+  cat("############## Version: ", CWversion, "############\n")
+  cat("Time stemp: ",Tstamp, "\n")
+  cat("for details see journal: ", file.path(path_output_act, "CanWat_journal_",Tstamp,".txt  \n"))
+  cat("started from folder: ",path_Cases, ", Case: ",act, "\n")
   # Log File "journal" ---------------------------------------------------------
   journal <- c(paste0("title: CanWat - run log: ",Tstamp, "  "), paste0("---  "), paste0("  ") 
                , "# CanWat - Canopy Water Balance Model"
@@ -343,13 +343,19 @@ CWversion <- 20250620
     iti <- 1L       # initiation of the inner loop counter
     ito <- 1L       # selection of a time step, definition needed for tests only
     pTS <- "."      # character to monitor the status
+    cat("\n")    
+    cat("############### Starting the time loop #############################\n")
+    cat(pTS, "each marks a new input time step\n")
+    cat(pTS, " is replaced by an 'E' during a rain event\n")
+    cat(pTS, " is replaced by an 'D' during a rain event where drainage occurs\n")
+    cat("####################################################################\n")
     for (ito in 1:ntu) {
       if (exists("ito.stop")) if (ito > ito.stop) stop(paste("debug stop at timestep", ito))
       if (silent < 2) if (RunControlFine){ 
-        print(paste0("outer time step ",ito, ", with ",dt0,"s at ", metPP$UTC[ito], " #############################"))
+        cat("outer time step ",ito, ", with ",dt0,"s at ", as.character(metPP$UTC[ito]), " #############################\n")
       } else {
         if (((ito %% 100) == 0) | ito == 1) {cat("\n ")
-          print(paste0("outer time step ",ito, " of ",ntu,", at ", metPP$UTC[ito], ": "))
+          cat("outer time step ",ito, " of ",ntu,", at ", as.character(metPP$UTC[ito]), ": \n")
         } else cat(pTS)
       }
   
@@ -656,19 +662,22 @@ CWversion <- 20250620
       #ito <- ito+1
     }   # < < TIME LOOP <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ---- 
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    cat("\n #### End of time loop #### \n \n")
     
   # Check Balance ##############################################################
     # source(file.path(path_sub,"Balance.R"))
     WBc <- WB[ito]$PF - WB[ito]$Pthroughf - WB[ito]$dC - WB[ito]$EV - WB[ito]$Dthroughf-sum(Drainage)*dtc/(nx*ny)
-    print(paste("WB: ",WBc))
     journal <- c(journal, "  " )
     journal <- c(journal, "# Water Balance  ")
     journal <- c(journal, "Check as mean value in mm = l/m²  ")
     journal <- c(journal, paste("WB = PF - Pthroughf - dC - EV - Dthroughf - sum(Drainage) dtc / (nx ny)  "))
     journal <- c(journal, paste("WB = ", WBc, " mm  "))
     
-    print( "EV.max, Drainage.max, C_3D.max, Pinter.max for graphics")
-    print(paste( EV.max, Drainage.max, C_3D.max, Pinter.max))
+    if (Test) {
+      cat("WB: ",WBc, "\n")
+      cat( "EV.max, Drainage.max, C_3D.max, Pinter.max for graphics \n")
+      cat( EV.max, Drainage.max, C_3D.max, Pinter.max, "\n")
+    }
   
     # Event Statistic ##########################################################
     ptime <- as.POSIXct(range(WB$UTC, na.rm = T ), origin="1970-01-01", tz="GMT")
@@ -780,7 +789,9 @@ CWversion <- 20250620
     # WFa.l <- WFa[1:itt]; WFa <- WFa[ ,UTC := as.POSIXct(UTC, origin="1970-01-01")  ]
     # stop("Stop after output")
   
-    print(paste0("~~~~~~~~~ Event ",  EvNo.selected[i.Ev] , " is finished. ~~~~~~~~~~~~~~~~~~"))
+    if (!is.na(sum(EvNo.selected))) {
+      cat("~~~~~~~~~ Event ",  EvNo.selected[i.Ev] , " is finished. ~~~~~~~~~~~~~~~~~~ \n")
+    }
 
   } # < Event loop <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ####  
   
@@ -794,7 +805,6 @@ CWversion <- 20250620
   journal <- c(journal, paste0("used time = ",  time.calc," ", attributes(time.calc)$unit , "  "))
   
   write(journal, file.path(path_output_act, paste0(act, "_CanWat_journal_",Tstamp,".md" )))
-  print(paste0("the LOG-file is saved in ==> ", path_output_act, paste0("/", act, "_CanWat_journal_",Tstamp,".md") ))
   
     
 # Save Event Statisics ####  
@@ -803,6 +813,7 @@ CWversion <- 20250620
   
   cat("               |\n               #\n              ###\n            #######\n         #############\n      ###################\n   #########################\n###### End of Simulation ######\n ############################\n    ######################\n          ##########\n \n")
 
+  cat("the LOG-file is saved in ==> ", path_output_act, paste0("/", act, "_CanWat_journal_",Tstamp,".md"), "\n \n")
   
 
   # END OF PROGRAM #############################################################

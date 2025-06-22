@@ -178,7 +178,7 @@ Meteo_Rn <- function(Rndat, Rnheights, Rg_3D, Rgtop, Ts_3D, Tatop, DDtop, PAD, P
     
   }
   
-  if (silent < 1) print(paste("Rntop: ",round(Rntop),"; Rn_3D:", round(sum(Rn_3D)/area_xy)))
+  # if (silent < 1) print(paste("Rntop: ",round(Rntop),"; Rn_3D:", round(sum(Rn_3D)/area_xy)))
   
   return(Rn_3D)
 }

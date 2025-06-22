@@ -19,7 +19,7 @@
 #   2019-10-xx , RQ:
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  if (silent < 1) print("     -> load Static Driver")
+  if (silent < 2) cat("---- load Static Driver \n")
 
   # read 3D-PAD voxel data as vector
   PAD_Voxel_vector <- fread(file.path(path_DriverStat, fnam.SD,sep=""))

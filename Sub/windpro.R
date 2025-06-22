@@ -43,7 +43,7 @@ windpro <- function(PAD, zz, z0, hWS, imref, ztop, dz, dy, dx, nz, ny, nx, iyWS=
   ES = 10   # PAD clustering
   fw = 10   # PAD filter width
   
-  if (silent < 2) print("- calculate generic wind profiles - windpro.R")
+  if (silent < 2) cat("---- calculate generic wind profiles - windpro.R \n")
 
 # SUBROUTINES ####
   source(file.path(path_sub,"PADmean.R")) # moving spatial mean for PAD

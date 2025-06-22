@@ -14,6 +14,8 @@ CanWat_Start_multi.R
 Cases/*
 !Cases/Case*
 !Cases/ASTW_intChute_2010_3D_input.R
+!Cases/ASTW0_output.R
+!Cases/ASTW1_output.R
 !Cases/Output_yz-cross-section.R
 Driver_static/*
 !Driver_static/Tree*

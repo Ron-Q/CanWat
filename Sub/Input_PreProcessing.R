@@ -10,7 +10,7 @@
 #    2023-07-02 : Ronald Queck : uppercase letters ...
 #-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-print("---- CALL: Input_PreProcessing.R ---> check and pre-process input data")
+cat("---- CALL: Input_PreProcessing.R ---> check and pre-process input data \n")
 
 if (!exists("Test")) Test <- F
 
